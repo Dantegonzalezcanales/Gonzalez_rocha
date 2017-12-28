@@ -57,7 +57,10 @@ public class Controlador implements ActionListener, MouseListener {
         TablaEmpleados,
         Btnvolveragregar,
         BtnListamodificar,
-        btvolvereliminar
+        btvolvereliminar,
+        btlimpiaragregar,
+        
+        
         
 
     }
@@ -130,7 +133,12 @@ public class Controlador implements ActionListener, MouseListener {
         this.vistaEliminar.bteliminar.addActionListener(this);    
         
         this.vistaEliminar.btvolvereliminar.setActionCommand("btvolvereliminar");
-        this.vistaEliminar.btvolvereliminar.addActionListener(this);           
+        this.vistaEliminar.btvolvereliminar.addActionListener(this);
+        
+        //acciones vista consulta
+        this.vistaConsulta.btconsulta1.setActionCommand("btconsulta1");
+        this.vistaConsulta.btconsulta1.addActionListener(this);
+
 
     }
 
@@ -160,6 +168,19 @@ public class Controlador implements ActionListener, MouseListener {
             case MenuSalir:
                 this.vista.dispose();
                 System.exit(0);
+                break;
+                
+            case btlimpiaragregar:
+                //Limpiamos textField
+                this.vistaAgregar.txtcodigo.setText("");
+                this.vistaAgregar.txtrut.setText("");
+                this.vistaAgregar.txtnombre.setText("");
+                this.vistaAgregar.txtapellido.setText("");
+                this.vistaAgregar.txtcelular.setText("");
+                this.vistaAgregar.txtemail.setText("");
+                this.vistaAgregar.txtsueldo.setText("");
+                this.vistaAgregar.CboxEstadocivilAgregar.setSelectedIndex(0);
+                this.vistaAgregar.cbdepartamento.setSelectedIndex(0);
                 break;
 
             //Acciones de menu de vista Agregar    
@@ -263,6 +284,24 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaEliminar.setVisible(false);
                 this.vista.setVisible(true);
                 break;
+                
+             //Acciones de menu de vista consulta
+            case btconsulta1:
+                this.vistaAgregar.setVisible(true);
+                this.vistaConsulta.setVisible(false);
+                //Limpiamos textField
+                this.vistaAgregar.txtcodigo.setText("");
+                this.vistaAgregar.txtrut.setText("");
+                this.vistaAgregar.txtnombre.setText("");
+                this.vistaAgregar.txtapellido.setText("");
+                this.vistaAgregar.txtcelular.setText("");
+                this.vistaAgregar.txtemail.setText("");
+                this.vistaAgregar.txtsueldo.setText("");
+                this.vistaAgregar.CboxEstadocivilAgregar.setSelectedIndex(0);
+                this.vistaAgregar.cbdepartamento.setSelectedIndex(0);
+                this.vistaAgregar.txtcodigo.grabFocus();
+                break;
+                
         }
     }
 

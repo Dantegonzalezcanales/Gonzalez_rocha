@@ -29,6 +29,7 @@ public class Agregar extends javax.swing.JFrame {
 
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        txtcodigo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -36,7 +37,6 @@ public class Agregar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtcodigo = new javax.swing.JTextField();
         txtrut = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtapellido = new javax.swing.JTextField();
@@ -50,6 +50,7 @@ public class Agregar extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         CboxEstadocivilAgregar = new javax.swing.JComboBox<>();
         Btnvolveragregar = new javax.swing.JButton();
+        btlimpiaragregar = new javax.swing.JButton();
 
         jLabel8.setText("jLabel8");
 
@@ -177,6 +178,8 @@ public class Agregar extends javax.swing.JFrame {
 
         Btnvolveragregar.setText("Volver");
 
+        btlimpiaragregar.setText("Limpiar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,8 +200,11 @@ public class Agregar extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Btnvolveragregar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btlimpiaragregar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Btnvolveragregar))
                                     .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
@@ -223,7 +229,9 @@ public class Agregar extends javax.swing.JFrame {
                         .addGap(20, 20, 20))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(Btnvolveragregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btnvolveragregar)
+                    .addComponent(btlimpiaragregar))
                 .addGap(26, 26, 26))
         );
 
@@ -273,6 +281,7 @@ public class Agregar extends javax.swing.JFrame {
     public javax.swing.JButton Btnvolveragregar;
     public javax.swing.JComboBox<String> CboxEstadocivilAgregar;
     public javax.swing.JButton btagregar;
+    public javax.swing.JButton btlimpiaragregar;
     public javax.swing.JComboBox<String> cbdepartamento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
