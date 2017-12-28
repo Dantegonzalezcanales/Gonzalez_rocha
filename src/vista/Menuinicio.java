@@ -74,6 +74,11 @@ public class Menuinicio extends javax.swing.JFrame {
         jMenu2.add(MenuEliminar);
 
         MenuConsulta.setText("Consulta");
+        MenuConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuConsultaActionPerformed(evt);
+            }
+        });
         jMenu2.add(MenuConsulta);
 
         jMenuBar1.add(jMenu2);
@@ -97,6 +102,10 @@ public class Menuinicio extends javax.swing.JFrame {
     private void MenuAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAgregarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuAgregarActionPerformed
+
+    private void MenuConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuConsultaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,11 +143,11 @@ public class Menuinicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MenuAgregar;
-    private javax.swing.JMenuItem MenuConsulta;
+    public javax.swing.JMenuItem MenuAgregar;
+    public javax.swing.JMenuItem MenuConsulta;
     public javax.swing.JMenuItem MenuEliminar;
-    private javax.swing.JMenuItem MenuModificar;
-    private javax.swing.JMenuItem MenuSalir;
+    public javax.swing.JMenuItem MenuModificar;
+    public javax.swing.JMenuItem MenuSalir;
     public javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
