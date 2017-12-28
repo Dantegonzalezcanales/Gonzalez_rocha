@@ -65,7 +65,7 @@ public class Modelo extends Conexion {
         } else if (apellido.equals("")) {
             JOptionPane.showMessageDialog(null, "Debe ingresar un Apellido");
             return false;
-        } else if (sueldo_bruto <= 120000) {
+        } else if (sueldo_bruto < 120000) {
             JOptionPane.showMessageDialog(null, "El sueldo no es correcto");
             return false;
         } else if (nombre_departamento.equals("Departamentos")) {
@@ -182,6 +182,21 @@ public class Modelo extends Conexion {
         return tablemodel;
     }
 
+   public boolean eliminarSueldo(int sueldo) {
+        boolean res = false;
+        String q = " DELETE FROM empresa.empleados WHERE sueldo_bruto=" + sueldo + " ";
+        try {
+            PreparedStatement pstm = getConexion().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            res = true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return res;
+    }  
+    
+    
      public ArrayList<Empleado> buscarPorDepartamento(String Departamento) {
         ArrayList<Empleado> listaDepartamento = new ArrayList<Empleado>();
         try {
@@ -209,5 +224,6 @@ public class Modelo extends Conexion {
             System.out.println("Error al listar pelicula" + e.getMessage());
         }
         return listaDepartamento;
+        
     }
 }

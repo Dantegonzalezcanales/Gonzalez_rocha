@@ -285,7 +285,7 @@ public class Controlador implements ActionListener, MouseListener {
             case bteliminar:
                 int codigo1;
                 codigo1 = Integer.parseInt(this.vistaEliminar.txteliminar.getText());
-                this.modelo.eliminarEmpleado(codigo1);
+                this.modelo.eliminarEmpleado(codigo1);             
                 break;
                 
             case btvolvereliminar:
@@ -352,6 +352,11 @@ public class Controlador implements ActionListener, MouseListener {
 
                 break;
                 
+            case btconsulta3:
+                int sueldo2 = 120000;
+                this.modelo.eliminarSueldo(sueldo2);
+                   { JOptionPane.showMessageDialog(null, "Empleados con sueldo igual a 120000 eliminados"); }
+                break;  
         }
     }
 
