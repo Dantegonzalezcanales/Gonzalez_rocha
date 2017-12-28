@@ -27,7 +27,7 @@ public class Modificar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        Btgestadocivilmod = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,9 +39,6 @@ public class Modificar extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         CboxDepartamento = new javax.swing.JComboBox<>();
-        RbtCasadoModificar = new javax.swing.JRadioButton();
-        RbtSolteroModificar = new javax.swing.JRadioButton();
-        RbtViudoModificar = new javax.swing.JRadioButton();
         txtCodigoModificar = new javax.swing.JFormattedTextField();
         TxtRutModificar = new javax.swing.JFormattedTextField();
         TxtNombreModificar = new javax.swing.JFormattedTextField();
@@ -51,6 +48,7 @@ public class Modificar extends javax.swing.JFrame {
         TxtSueldoModificar = new javax.swing.JFormattedTextField();
         BtnModificarModificar = new javax.swing.JButton();
         BtnBuscarModificar = new javax.swing.JButton();
+        CboxEstadosMod = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaEmpleados = new javax.swing.JTable();
         Titulo = new javax.swing.JLabel();
@@ -81,18 +79,11 @@ public class Modificar extends javax.swing.JFrame {
 
         CboxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
 
-        buttonGroup1.add(RbtCasadoModificar);
-        RbtCasadoModificar.setText("Casado");
-
-        buttonGroup1.add(RbtSolteroModificar);
-        RbtSolteroModificar.setText("Soltero");
-
-        buttonGroup1.add(RbtViudoModificar);
-        RbtViudoModificar.setText("Viudo");
-
         BtnModificarModificar.setText("Modificar");
 
         BtnBuscarModificar.setText("Buscar");
+
+        CboxEstadosMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Soltero", "Casado", "Viudo" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -139,11 +130,9 @@ public class Modificar extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8))
                                 .addGap(25, 25, 25)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(RbtSolteroModificar)
-                                    .addComponent(RbtCasadoModificar)
-                                    .addComponent(RbtViudoModificar)
-                                    .addComponent(TxtSueldoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TxtSueldoModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(CboxEstadosMod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CboxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,18 +147,15 @@ public class Modificar extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(txtCodigoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnBuscarModificar))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtEmailModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(TxtRutModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtEmailModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(TxtRutModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -186,15 +172,12 @@ public class Modificar extends javax.swing.JFrame {
                             .addComponent(TxtApellidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RbtCasadoModificar)
-                            .addComponent(jLabel8))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RbtSolteroModificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel8)
+                            .addComponent(CboxEstadosMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RbtViudoModificar)
                     .addComponent(BtnModificarModificar)
                     .addComponent(jLabel5)
                     .addComponent(TxtCelularModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -294,13 +277,12 @@ public class Modificar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.ButtonGroup Btgestadocivilmod;
     public javax.swing.JButton BtnBuscarModificar;
     public javax.swing.JButton BtnModificarModificar;
     public javax.swing.JButton BtnvolverModificar;
-    private javax.swing.JComboBox<String> CboxDepartamento;
-    public javax.swing.JRadioButton RbtCasadoModificar;
-    public javax.swing.JRadioButton RbtSolteroModificar;
-    public javax.swing.JRadioButton RbtViudoModificar;
+    public javax.swing.JComboBox<String> CboxDepartamento;
+    public javax.swing.JComboBox<String> CboxEstadosMod;
     public javax.swing.JTable TablaEmpleados;
     public javax.swing.JLabel Titulo;
     public javax.swing.JFormattedTextField TxtApellidoModificar;
@@ -309,7 +291,6 @@ public class Modificar extends javax.swing.JFrame {
     public javax.swing.JFormattedTextField TxtNombreModificar;
     public javax.swing.JFormattedTextField TxtRutModificar;
     public javax.swing.JFormattedTextField TxtSueldoModificar;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

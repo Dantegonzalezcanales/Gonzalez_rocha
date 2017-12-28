@@ -28,7 +28,6 @@ public class Agregar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
-        BTGestadocivilagregar = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,13 +44,11 @@ public class Agregar extends javax.swing.JFrame {
         txtemail = new javax.swing.JTextField();
         txtsueldo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        rbsoltero = new javax.swing.JRadioButton();
-        rbcasado = new javax.swing.JRadioButton();
-        rbviudo = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         cbdepartamento = new javax.swing.JComboBox<>();
         btagregar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        CboxEstadocivilAgregar = new javax.swing.JComboBox<>();
 
         jLabel8.setText("jLabel8");
 
@@ -146,15 +143,6 @@ public class Agregar extends javax.swing.JFrame {
 
         jLabel9.setText("ESTADO CIVIL");
 
-        BTGestadocivilagregar.add(rbsoltero);
-        rbsoltero.setText("Soltero");
-
-        BTGestadocivilagregar.add(rbcasado);
-        rbcasado.setText("Casado");
-
-        BTGestadocivilagregar.add(rbviudo);
-        rbviudo.setText("Viudo");
-
         cbdepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamentos", "Informatica", "Rdes", "Administracion", "Finanzas", "Bienestar" }));
         cbdepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,6 +172,8 @@ public class Agregar extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("AGREGAR");
 
+        CboxEstadocivilAgregar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Soltero", "Casado", "Viudo" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,20 +187,14 @@ public class Agregar extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(95, 95, 95)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel9)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(rbsoltero))
-                                        .addComponent(btagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(101, 101, 101)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rbviudo)
-                                            .addComponent(rbcasado)))))
+                                    .addComponent(jLabel9)
+                                    .addComponent(btagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -227,16 +211,13 @@ public class Agregar extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btagregar)
-                        .addGap(66, 66, 66)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(rbsoltero))
-                        .addGap(18, 18, 18)
-                        .addComponent(rbcasado))
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(rbviudo)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,7 +263,7 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.ButtonGroup BTGestadocivilagregar;
+    public javax.swing.JComboBox<String> CboxEstadocivilAgregar;
     public javax.swing.JButton btagregar;
     public javax.swing.JComboBox<String> cbdepartamento;
     private javax.swing.JLabel jLabel1;
@@ -297,9 +278,6 @@ public class Agregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JRadioButton rbcasado;
-    public javax.swing.JRadioButton rbsoltero;
-    public javax.swing.JRadioButton rbviudo;
     public javax.swing.JTextField txtapellido;
     public javax.swing.JTextField txtcelular;
     public javax.swing.JTextField txtcodigo;
