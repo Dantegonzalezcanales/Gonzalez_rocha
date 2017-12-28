@@ -113,6 +113,19 @@ public class Modelo extends Conexion {
         }
         return false;
     }
+    
+        public boolean modificaEmpleado1() {
+        String q = "UPDATE empresa.empleados SET sueldo_bruto= sueldo_bruto*1.1 ";
+        try {
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
 
     public ArrayList<Empleado> buscarPorCodigo(String codigo) {
         ArrayList<Empleado> listaEmpleado = new ArrayList<Empleado>();

@@ -59,9 +59,6 @@ public class Controlador implements ActionListener, MouseListener {
         BtnListamodificar,
         btvolvereliminar,
         btlimpiaragregar,
-        
-        
-        
 
     }
 
@@ -108,7 +105,7 @@ public class Controlador implements ActionListener, MouseListener {
         //acción en  Agregar
         this.vistaAgregar.btagregar.setActionCommand("btagregar");
         this.vistaAgregar.btagregar.addActionListener(this);
-        
+
         this.vistaAgregar.Btnvolveragregar.setActionCommand("Btnvolveragregar");
         this.vistaAgregar.Btnvolveragregar.addActionListener(this);
 
@@ -124,17 +121,17 @@ public class Controlador implements ActionListener, MouseListener {
 
         this.vistaModificar.TablaEmpleados.addMouseListener(this);
         this.vistaModificar.TablaEmpleados.setModel(new DefaultTableModel());
-        
+
         this.vistaModificar.BtnListamodificar.setActionCommand("BtnListamodificar");
-        this.vistaModificar.BtnListamodificar.addActionListener(this);   
-        
+        this.vistaModificar.BtnListamodificar.addActionListener(this);
+
         //acciones vista eliminar
         this.vistaEliminar.bteliminar.setActionCommand("bteliminar");
-        this.vistaEliminar.bteliminar.addActionListener(this);    
-        
+        this.vistaEliminar.bteliminar.addActionListener(this);
+
         this.vistaEliminar.btvolvereliminar.setActionCommand("btvolvereliminar");
         this.vistaEliminar.btvolvereliminar.addActionListener(this);
-        
+
         //acciones vista consulta
         this.vistaConsulta.btconsulta1.setActionCommand("btconsulta1");
         this.vistaConsulta.btconsulta1.addActionListener(this);
@@ -177,7 +174,7 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vista.dispose();
                 System.exit(0);
                 break;
-                
+
             case btlimpiaragregar:
                 //Limpiamos textField
                 this.vistaAgregar.txtcodigo.setText("");
@@ -207,7 +204,7 @@ public class Controlador implements ActionListener, MouseListener {
                     JOptionPane.showMessageDialog(null, "Producto agregado correctamente");
                 }
                 break;
-            
+
             case Btnvolveragregar:
                 this.vistaAgregar.setVisible(false);
                 this.vista.setVisible(true);
@@ -269,12 +266,11 @@ public class Controlador implements ActionListener, MouseListener {
                     JOptionPane.showMessageDialog(null, "Producto Modificado correctamente");
                 }
                 break;
-            
+
             case BtnListamodificar:
-             //obtiene del modelo los registros en un DefaultTableModel y lo asigna en la vista
+                //obtiene del modelo los registros en un DefaultTableModel y lo asigna en la vista
                 this.vistaModificar.TablaEmpleados.setModel(this.modelo.ListadoEmpleado());
                 break;
-                
 
             case BtnvolverModificar:
                 this.vistaModificar.setVisible(false);
@@ -285,15 +281,15 @@ public class Controlador implements ActionListener, MouseListener {
             case bteliminar:
                 int codigo1;
                 codigo1 = Integer.parseInt(this.vistaEliminar.txteliminar.getText());
-                this.modelo.eliminarEmpleado(codigo1);             
+                this.modelo.eliminarEmpleado(codigo1);
                 break;
-                
+
             case btvolvereliminar:
                 this.vistaEliminar.setVisible(false);
                 this.vista.setVisible(true);
                 break;
-                
-             //Acciones de menu de vista consulta
+
+            //Acciones de menu de vista consulta
             case btconsulta1:
                 this.vistaAgregar.setVisible(true);
                 this.vistaConsulta.setVisible(false);
@@ -309,13 +305,13 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaAgregar.cbdepartamento.setSelectedIndex(0);
                 this.vistaAgregar.txtcodigo.grabFocus();
                 break;
-                
+
             case btconsulta2:
                 this.vistaModificar.setVisible(true);
                 this.vistaConsulta.setVisible(false);
-                 try {
-                     
-                     String Departamento = "Redes";
+                try {
+
+                    String Departamento = "Redes";
 
                     DefaultTableModel modeloT = new DefaultTableModel();
                     vistaModificar.TablaEmpleados.setModel(modeloT);
@@ -351,12 +347,25 @@ public class Controlador implements ActionListener, MouseListener {
                 }
 
                 break;
-                
+
             case btconsulta3:
                 int sueldo2 = 120000;
                 this.modelo.eliminarSueldo(sueldo2);
-                   { JOptionPane.showMessageDialog(null, "Empleados con sueldo igual a 120000 eliminados"); }
-                break;  
+                 {
+                    JOptionPane.showMessageDialog(null, "Empleados con sueldo igual a 120000 eliminados");
+                }
+                break;
+
+            case btconsulta4:
+                if (this.modelo.modificaEmpleado1());
+                 {
+                    JOptionPane.showMessageDialog(null, "Los sueldos aumentaron en un 10%");
+                }
+
+            case btvolverconsulta:
+                this.vistaConsulta.setVisible(false);
+                this.vistaModificar.setVisible(true);
+                break;
         }
     }
 
