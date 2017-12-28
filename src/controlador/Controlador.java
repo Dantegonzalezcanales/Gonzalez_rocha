@@ -139,6 +139,14 @@ public class Controlador implements ActionListener, MouseListener {
         this.vistaConsulta.btconsulta1.setActionCommand("btconsulta1");
         this.vistaConsulta.btconsulta1.addActionListener(this);
 
+        this.vistaConsulta.btconsulta2.setActionCommand("btconsulta2");
+        this.vistaConsulta.btconsulta2.addActionListener(this);
+
+        this.vistaConsulta.btconsulta3.setActionCommand("btconsulta3");
+        this.vistaConsulta.btconsulta3.addActionListener(this);
+
+        this.vistaConsulta.btconsulta4.setActionCommand("btconsulta4");
+        this.vistaConsulta.btconsulta4.addActionListener(this);
 
     }
 
@@ -300,6 +308,48 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaAgregar.CboxEstadocivilAgregar.setSelectedIndex(0);
                 this.vistaAgregar.cbdepartamento.setSelectedIndex(0);
                 this.vistaAgregar.txtcodigo.grabFocus();
+                break;
+                
+            case btconsulta2:
+                this.vistaModificar.setVisible(true);
+                this.vistaConsulta.setVisible(false);
+                 try {
+                     
+                     String Departamento = "Redes";
+
+                    DefaultTableModel modeloT = new DefaultTableModel();
+                    vistaModificar.TablaEmpleados.setModel(modeloT);
+
+                    modeloT.addColumn("Codigo");
+                    modeloT.addColumn("Rut");
+                    modeloT.addColumn("Nombre");
+                    modeloT.addColumn("Apellido");
+                    modeloT.addColumn("celular");
+                    modeloT.addColumn("Email");
+                    modeloT.addColumn("Sueldo bruto");
+                    modeloT.addColumn("Estado civil");
+                    modeloT.addColumn("Departamento");
+
+                    Object[] columna = new Object[9];
+
+                    int numRegistros = modelo.buscarPorDepartamento(Departamento).size();
+
+                    for (int i = 0; i < numRegistros; i++) {
+                        columna[0] = modelo.buscarPorDepartamento(Departamento).get(i).getCodigo();
+                        columna[1] = modelo.buscarPorDepartamento(Departamento).get(i).getRut();
+                        columna[2] = modelo.buscarPorDepartamento(Departamento).get(i).getNombre();
+                        columna[3] = modelo.buscarPorDepartamento(Departamento).get(i).getApellido();
+                        columna[4] = modelo.buscarPorDepartamento(Departamento).get(i).getCelular();
+                        columna[5] = modelo.buscarPorDepartamento(Departamento).get(i).getEmail();
+                        columna[6] = modelo.buscarPorDepartamento(Departamento).get(i).getSueldo_bruto();
+                        columna[7] = modelo.buscarPorDepartamento(Departamento).get(i).getEstado_civil();
+                        columna[8] = modelo.buscarPorDepartamento(Departamento).get(i).getNombre_departamento();
+                        modeloT.addRow(columna);
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Empleado no encontrado");
+                }
+
                 break;
                 
         }

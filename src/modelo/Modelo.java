@@ -182,4 +182,32 @@ public class Modelo extends Conexion {
         return tablemodel;
     }
 
+     public ArrayList<Empleado> buscarPorDepartamento(String Departamento) {
+        ArrayList<Empleado> listaDepartamento = new ArrayList<Empleado>();
+        try {
+            Connection conexion = getConexion();
+            String query = "SELECT codigo, rut,nombre,apellido,celular,email,sueldo_bruto,estado_civil,nombre_departamento From empleados where nombre_departamento=?";
+            PreparedStatement buscarPorCodigo = conexion.prepareStatement(query);
+            buscarPorCodigo.setString(1, Departamento);
+            ResultSet rs = buscarPorCodigo.executeQuery();
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setCodigo(rs.getInt("codigo"));
+                empleado.setRut(rs.getString("rut"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido(rs.getString("apellido"));
+                empleado.setCelular(rs.getInt("celular"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setSueldo_bruto(rs.getInt("sueldo_bruto"));
+                empleado.setEstado_civil(rs.getString("estado_civil"));
+                empleado.setNombre_departamento(rs.getString("Nombre_departamento"));
+                listaDepartamento.add(empleado);
+            }
+        } catch (SQLException s) {
+            System.out.println("Error SQL al listar pelicula" + s.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error al listar pelicula" + e.getMessage());
+        }
+        return listaDepartamento;
+    }
 }
