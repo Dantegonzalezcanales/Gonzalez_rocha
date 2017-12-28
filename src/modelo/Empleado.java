@@ -9,18 +9,22 @@ public class Empleado {
     private String nombre;
     private String apellido;
     private int celular;
+    private String email;
+    private int sueldo_bruto;
     private String estado_civil;
     private String nombre_departamento;
 
     public Empleado() {
     }
 
-    public Empleado(int codigo, String rut, String nombre, String apellido, int celular, String estado_civil, String nombre_departamento) {
+    public Empleado(int codigo, String rut, String nombre, String apellido, int celular,String email,int sueldo_bruto, String estado_civil, String nombre_departamento) {
         this.codigo = codigo;
         this.rut = rut;
         this.nombre = nombre;
         this.apellido = apellido;
         this.celular = celular;
+        this.email= email;
+        this.sueldo_bruto= sueldo_bruto;
         this.estado_civil = estado_civil;
         this.nombre_departamento = nombre_departamento;
     }
@@ -43,6 +47,14 @@ public class Empleado {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setNombre(String nombre) {
@@ -79,6 +91,14 @@ public class Empleado {
 
     public void setNombre_departamento(String nombre_departamento) {
         this.nombre_departamento = nombre_departamento;
+    }
+
+    public int getSueldo_bruto() {
+        return sueldo_bruto;
+    }
+
+    public void setSueldo_bruto(int sueldo_bruto) {
+        this.sueldo_bruto = sueldo_bruto;
     }
     
     
