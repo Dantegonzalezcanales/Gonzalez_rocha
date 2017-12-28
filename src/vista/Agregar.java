@@ -28,6 +28,7 @@ public class Agregar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
+        BTGestadocivilagregar = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -145,10 +146,13 @@ public class Agregar extends javax.swing.JFrame {
 
         jLabel9.setText("ESTADO CIVIL");
 
+        BTGestadocivilagregar.add(rbsoltero);
         rbsoltero.setText("Soltero");
 
+        BTGestadocivilagregar.add(rbcasado);
         rbcasado.setText("Casado");
 
+        BTGestadocivilagregar.add(rbviudo);
         rbviudo.setText("Viudo");
 
         cbdepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamentos", "Informatica", "Rdes", "Administracion", "Finanzas", "Bienestar" }));
@@ -278,6 +282,7 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.ButtonGroup BTGestadocivilagregar;
     public javax.swing.JButton btagregar;
     public javax.swing.JComboBox<String> cbdepartamento;
     private javax.swing.JLabel jLabel1;
@@ -295,12 +300,12 @@ public class Agregar extends javax.swing.JFrame {
     public javax.swing.JRadioButton rbcasado;
     public javax.swing.JRadioButton rbsoltero;
     public javax.swing.JRadioButton rbviudo;
-    private javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtcelular;
-    private javax.swing.JTextField txtcodigo;
-    private javax.swing.JTextField txtemail;
-    private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtrut;
-    private javax.swing.JTextField txtsueldo;
+    public javax.swing.JTextField txtapellido;
+    public javax.swing.JTextField txtcelular;
+    public javax.swing.JTextField txtcodigo;
+    public javax.swing.JTextField txtemail;
+    public javax.swing.JTextField txtnombre;
+    public javax.swing.JTextField txtrut;
+    public javax.swing.JTextField txtsueldo;
     // End of variables declaration//GEN-END:variables
 }
