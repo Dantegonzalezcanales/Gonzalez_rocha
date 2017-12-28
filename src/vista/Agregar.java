@@ -49,6 +49,7 @@ public class Agregar extends javax.swing.JFrame {
         btagregar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         CboxEstadocivilAgregar = new javax.swing.JComboBox<>();
+        Btnvolveragregar = new javax.swing.JButton();
 
         jLabel8.setText("jLabel8");
 
@@ -143,7 +144,7 @@ public class Agregar extends javax.swing.JFrame {
 
         jLabel9.setText("ESTADO CIVIL");
 
-        cbdepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamentos", "Informatica", "Rdes", "Administracion", "Finanzas", "Bienestar" }));
+        cbdepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
         cbdepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbdepartamentoActionPerformed(evt);
@@ -172,7 +173,9 @@ public class Agregar extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("AGREGAR");
 
-        CboxEstadocivilAgregar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Soltero", "Casado", "Viudo" }));
+        CboxEstadocivilAgregar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "S", "C", "V" }));
+
+        Btnvolveragregar.setText("Volver");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,7 +197,9 @@ public class Agregar extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
-                                .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Btnvolveragregar)
+                                    .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -217,7 +222,9 @@ public class Agregar extends javax.swing.JFrame {
                         .addComponent(CboxEstadocivilAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(Btnvolveragregar)
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -263,6 +270,7 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Btnvolveragregar;
     public javax.swing.JComboBox<String> CboxEstadocivilAgregar;
     public javax.swing.JButton btagregar;
     public javax.swing.JComboBox<String> cbdepartamento;

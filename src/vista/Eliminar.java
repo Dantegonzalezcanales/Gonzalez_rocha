@@ -132,8 +132,8 @@ public class Eliminar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bteliminar;
-    private javax.swing.JButton btvolvereliminar;
+    public javax.swing.JButton bteliminar;
+    public javax.swing.JButton btvolvereliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txteliminar;

@@ -24,7 +24,7 @@ public class Modelo extends Conexion {
         if (valida_datos(codigo, rut, nombre, apellido, celular, email, sueldo_bruto, estado_civil, nombre_departamento)) {
 
 //            Se arma la consulta
-            String q = " INSERT INTO pelicula (codigo, rut,nombre,apellido,celular,email,sueldo_bruto,estado_civil,nombre_departamento) "
+            String q = " INSERT INTO empleados (codigo, rut,nombre,apellido,celular,email,sueldo_bruto,estado_civil,nombre_departamento) "
                     + "VALUES ( " + codigo + ",'" + rut + "', '" + nombre
                     + "','" + apellido + "'," + celular + ",'" + email + "'," + sueldo_bruto + ",'" + estado_civil + "','" + nombre_departamento + "') ";
 //            se ejecuta la consulta
@@ -49,7 +49,7 @@ public class Modelo extends Conexion {
     //Metodo para validar datos
     private boolean valida_datos(int codigo, String rut, String nombre, String apellido, int celular, String email, int sueldo_bruto, String estado_civil, String nombre_departamento) {
 
-        if (codigo > 0 && codigo <= 100) {
+        if (codigo < 0 && codigo >= 100) {
             JOptionPane.showMessageDialog(null, "Codigo no esta dentro del Rango");
             return false;
 
@@ -65,14 +65,18 @@ public class Modelo extends Conexion {
         } else if (apellido.equals("")) {
             JOptionPane.showMessageDialog(null, "Debe ingresar un Apellido");
             return false;
-        } else if (sueldo_bruto >= 120000) {
+        } else if (sueldo_bruto <= 120000) {
             JOptionPane.showMessageDialog(null, "El sueldo no es correcto");
             return false;
-        } else if (estado_civil.equals("C") || estado_civil.equals("S") || estado_civil.equals("V")) {
+        } else if (nombre_departamento.equals("Departamentos")) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar un Departamento");
+            return false;
+        } else if (estado_civil.equals("C") || estado_civil.equals("S") || estado_civil.equals("V")) 
+            return true;
+        else  {
             JOptionPane.showMessageDialog(null, "Debe seleccionar estado civil");
-        }
-        return false;
-    }
+            return false;
+        }    }
 
     public boolean eliminarEmpleado(int codigo) {
         boolean res = false;
@@ -81,13 +85,18 @@ public class Modelo extends Conexion {
             PreparedStatement pstm = getConexion().prepareStatement(q);
             pstm.execute();
             pstm.close();
-            res = true;
+            res = true;    
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
         return res;
     }
 
+//     private boolean valida_datos(int codigo){
+//        String codigo1 = String.valueOf("");
+//         if(codigo1.equals("")){JOptionPane.showMessageDialog(null, "Debe seleccionar estado civil");
+//     }
+    
     //Modificar producto seleccionado
     public boolean modificaEmpleado(int codigo, String rut, String nombre, String apellido, int celular, String email, int sueldo_bruto, String estado_civil, String nombre_departamento) {
         String q = "UPDATE empresa.empleados SET codigo=" + codigo + ", rut=" + rut + ", nombre='" + nombre
@@ -160,9 +169,9 @@ public class Modelo extends Conexion {
                 data[i][3] = res.getString("apellido");
                 data[i][4] = res.getString("celular");
                 data[i][5] = res.getString("email");
-                data[i][6] = res.getString("sueldo bruto");
-                data[i][7] = res.getString("estado civil");
-                data[i][8] = res.getString("nombre departamento");
+                data[i][6] = res.getString("sueldo_bruto");
+                data[i][7] = res.getString("estado_civil");
+                data[i][8] = res.getString("nombre_departamento");
                 i++;
             }
             res.close();

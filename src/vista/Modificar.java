@@ -38,7 +38,7 @@ public class Modificar extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        CboxDepartamento = new javax.swing.JComboBox<>();
+        CboxDepartamentomod = new javax.swing.JComboBox<>();
         txtCodigoModificar = new javax.swing.JFormattedTextField();
         TxtRutModificar = new javax.swing.JFormattedTextField();
         TxtNombreModificar = new javax.swing.JFormattedTextField();
@@ -54,6 +54,7 @@ public class Modificar extends javax.swing.JFrame {
         Titulo = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         BtnvolverModificar = new javax.swing.JButton();
+        BtnListamodificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,13 +78,13 @@ public class Modificar extends javax.swing.JFrame {
 
         jLabel9.setText("Nombre Departamento");
 
-        CboxDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
+        CboxDepartamentomod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Informática", "Redes", "Administración", "Finanzas", "Bienestar" }));
 
         BtnModificarModificar.setText("Modificar");
 
         BtnBuscarModificar.setText("Buscar");
 
-        CboxEstadosMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Soltero", "Casado", "Viudo" }));
+        CboxEstadosMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "S", "C", "V" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,7 +136,7 @@ public class Modificar extends javax.swing.JFrame {
                                     .addComponent(CboxEstadosMod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CboxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CboxDepartamentomod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))))
                 .addGap(33, 33, 33))
         );
@@ -164,18 +165,15 @@ public class Modificar extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
                         .addComponent(TxtSueldoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CboxDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CboxDepartamentomod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtApellidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(CboxEstadosMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtApellidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(CboxEstadosMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnModificarModificar)
@@ -205,6 +203,8 @@ public class Modificar extends javax.swing.JFrame {
 
         BtnvolverModificar.setText("Volver");
 
+        BtnListamodificar.setText("Listar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,6 +219,8 @@ public class Modificar extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnListamodificar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnvolverModificar)
                 .addGap(51, 51, 51))
         );
@@ -234,7 +236,9 @@ public class Modificar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnvolverModificar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnvolverModificar)
+                    .addComponent(BtnListamodificar))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -279,9 +283,10 @@ public class Modificar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.ButtonGroup Btgestadocivilmod;
     public javax.swing.JButton BtnBuscarModificar;
+    public javax.swing.JButton BtnListamodificar;
     public javax.swing.JButton BtnModificarModificar;
     public javax.swing.JButton BtnvolverModificar;
-    public javax.swing.JComboBox<String> CboxDepartamento;
+    public javax.swing.JComboBox<String> CboxDepartamentomod;
     public javax.swing.JComboBox<String> CboxEstadosMod;
     public javax.swing.JTable TablaEmpleados;
     public javax.swing.JLabel Titulo;

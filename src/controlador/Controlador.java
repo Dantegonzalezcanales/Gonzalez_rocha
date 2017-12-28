@@ -40,7 +40,7 @@ public class Controlador implements ActionListener, MouseListener {
      */
     public enum AccionMVC {
         btagregar,
-        BtnEliminareliminar,
+        bteliminar,
         btconsulta1,
         btconsulta2,
         btconsulta3,
@@ -54,7 +54,11 @@ public class Controlador implements ActionListener, MouseListener {
         BtnBuscarModificar,
         BtnModificarModificar,
         BtnvolverModificar,
-        TablaEmpleados
+        TablaEmpleados,
+        Btnvolveragregar,
+        BtnListamodificar,
+        btvolvereliminar
+        
 
     }
 
@@ -101,6 +105,9 @@ public class Controlador implements ActionListener, MouseListener {
         //acción en  Agregar
         this.vistaAgregar.btagregar.setActionCommand("btagregar");
         this.vistaAgregar.btagregar.addActionListener(this);
+        
+        this.vistaAgregar.Btnvolveragregar.setActionCommand("Btnvolveragregar");
+        this.vistaAgregar.Btnvolveragregar.addActionListener(this);
 
         //acion en Modificar
         this.vistaModificar.BtnBuscarModificar.setActionCommand("BtnBuscarModificar");
@@ -114,6 +121,16 @@ public class Controlador implements ActionListener, MouseListener {
 
         this.vistaModificar.TablaEmpleados.addMouseListener(this);
         this.vistaModificar.TablaEmpleados.setModel(new DefaultTableModel());
+        
+        this.vistaModificar.BtnListamodificar.setActionCommand("BtnListamodificar");
+        this.vistaModificar.BtnListamodificar.addActionListener(this);   
+        
+        //acciones vista eliminar
+        this.vistaEliminar.bteliminar.setActionCommand("bteliminar");
+        this.vistaEliminar.bteliminar.addActionListener(this);    
+        
+        this.vistaEliminar.btvolvereliminar.setActionCommand("btvolvereliminar");
+        this.vistaEliminar.btvolvereliminar.addActionListener(this);           
 
     }
 
@@ -160,6 +177,11 @@ public class Controlador implements ActionListener, MouseListener {
                 )) {
                     JOptionPane.showMessageDialog(null, "Producto agregado correctamente");
                 }
+                break;
+            
+            case Btnvolveragregar:
+                this.vistaAgregar.setVisible(false);
+                this.vista.setVisible(true);
                 break;
 
             //Acciones de menu de vista Modificar 
@@ -214,10 +236,16 @@ public class Controlador implements ActionListener, MouseListener {
                         this.vistaModificar.TxtEmailModificar.getText(),
                         Integer.parseInt(this.vistaModificar.TxtSueldoModificar.getText()),
                         this.vistaModificar.CboxEstadosMod.getSelectedItem().toString(),
-                        this.vistaModificar.CboxDepartamento.getSelectedItem().toString())) {
+                        this.vistaModificar.CboxDepartamentomod.getSelectedItem().toString())) {
                     JOptionPane.showMessageDialog(null, "Producto Modificado correctamente");
                 }
                 break;
+            
+            case BtnListamodificar:
+             //obtiene del modelo los registros en un DefaultTableModel y lo asigna en la vista
+                this.vistaModificar.TablaEmpleados.setModel(this.modelo.ListadoEmpleado());
+                break;
+                
 
             case BtnvolverModificar:
                 this.vistaModificar.setVisible(false);
@@ -225,10 +253,15 @@ public class Controlador implements ActionListener, MouseListener {
                 break;
 
             //Acciones de menu de vista Eliminar
-            case BtnEliminareliminar:
+            case bteliminar:
                 int codigo1;
                 codigo1 = Integer.parseInt(this.vistaEliminar.txteliminar.getText());
                 this.modelo.eliminarEmpleado(codigo1);
+                break;
+                
+            case btvolvereliminar:
+                this.vistaEliminar.setVisible(false);
+                this.vista.setVisible(true);
                 break;
         }
     }
@@ -247,7 +280,7 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaModificar.TxtEmailModificar.setText(String.valueOf(this.vistaModificar.TablaEmpleados.getValueAt(fila, 5)));
                 this.vistaModificar.TxtSueldoModificar.setText(String.valueOf(this.vistaModificar.TablaEmpleados.getValueAt(fila, 6)));
                 this.vistaModificar.CboxEstadosMod.setSelectedItem(String.valueOf(this.vistaModificar.TablaEmpleados.getValueAt(fila, 7)));
-                this.vistaModificar.CboxDepartamento.setSelectedItem(String.valueOf(this.vistaModificar.TablaEmpleados.getValueAt(fila, 8)));
+                this.vistaModificar.CboxDepartamentomod.setSelectedItem(String.valueOf(this.vistaModificar.TablaEmpleados.getValueAt(fila, 8)));
 //       
 
             }

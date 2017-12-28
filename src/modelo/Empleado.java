@@ -15,7 +15,7 @@ public class Empleado {
     private String nombre_departamento;
 
     public Empleado() {
-    }
+    } 
 
     public Empleado(int codigo, String rut, String nombre, String apellido, int celular,String email,int sueldo_bruto, String estado_civil, String nombre_departamento) {
         this.codigo = codigo;
