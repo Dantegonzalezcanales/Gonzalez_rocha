@@ -108,6 +108,9 @@ public class Controlador implements ActionListener, MouseListener {
 
         this.vistaAgregar.Btnvolveragregar.setActionCommand("Btnvolveragregar");
         this.vistaAgregar.Btnvolveragregar.addActionListener(this);
+        
+        this.vistaAgregar.btlimpiaragregar.setActionCommand("btlimpiaragregar");
+        this.vistaAgregar.btlimpiaragregar.addActionListener(this);
 
         //acion en Modificar
         this.vistaModificar.BtnBuscarModificar.setActionCommand("BtnBuscarModificar");
@@ -175,6 +178,7 @@ public class Controlador implements ActionListener, MouseListener {
                 System.exit(0);
                 break;
 
+            //Acciones de menu de vista Agregar 
             case btlimpiaragregar:
                 //Limpiamos textField
                 this.vistaAgregar.txtcodigo.setText("");
@@ -186,9 +190,9 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaAgregar.txtsueldo.setText("");
                 this.vistaAgregar.CboxEstadocivilAgregar.setSelectedIndex(0);
                 this.vistaAgregar.cbdepartamento.setSelectedIndex(0);
+                this.vistaAgregar.txtcodigo.grabFocus();
                 break;
 
-            //Acciones de menu de vista Agregar    
             case btagregar:
                 if (this.modelo.AgregarEmpleado(
                         Integer.parseInt(this.vistaAgregar.txtcodigo.getText()),
